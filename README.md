@@ -6,8 +6,6 @@ img=cv2.imread('blue.jpg',0)<br>
 cv2.imshow('image',img)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
-OUTPUT:<br>
-![ddout](https://user-images.githubusercontent.com/98145032/173814478-94c35ea6-0426-4bf3-b6cb-1956abd7ee30.png)<br>
 
 <br>
 Program 2:<br>
