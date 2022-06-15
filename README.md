@@ -7,7 +7,7 @@ cv2.imshow('image',img)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
 OUTPUT:<br>
-
+https://user-images.githubusercontent.com/98145090/173802776-7d1f3cc5-c2c7-485a-9b73-d2ae1939426f.png<br>
 <br>
 Program 2:<br>
 import matplotlib.image as mping<br>
