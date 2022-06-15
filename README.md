@@ -1,11 +1,15 @@
 # Image-Processing<br>
 http://localhost:8889/notebooks/swap/program1.ipynb<br>
+Program 1:<br>
 import cv2<br>
 img=cv2.imread('blue.jpg',0)<br>
 cv2.imshow('image',img)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
+OUTPUT:<br>
+
 <br>
+Program 2:<br>
 import matplotlib.image as mping<br>
 import matplotlib.pyplot as plt<br>
 img=mping.imread('leaf1.jpg')<br>
