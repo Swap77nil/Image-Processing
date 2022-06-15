@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt<br>
 img=mping.imread('leaf1.jpg')<br>
 plt.imshow(img)<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/98145032/173810032-9d9e8ce2-0cbe-48e3-8f65-770193caf0a6.png)<br>
+![Screenshot 2022-06-15 161934](https://user-images.githubusercontent.com/98145032/173815255-f95445d5-72e1-4318-a569-303caa92e8d1.png)<br>
 <br>
 from PIL import Image<br>
 img=Image.open('butterfly1.jpg')<br>
@@ -37,7 +37,7 @@ img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br>
 plt.imshow(img)<br>
 plt.show()<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/98145032/173810598-1c1e6298-ebd9-40d3-93af-6d50f2c39717.png)<br>
+![Screenshot 2022-06-15 162257](https://user-images.githubusercontent.com/98145032/173815385-69c271f2-9c88-4a29-b227-82b8c19e6f77.png)<br>
 <br>
 from PIL import Image<br>
 img=Image.open('plant1.jpg')<br>
@@ -49,7 +49,8 @@ print('Width:',img.width)<br>
 print('Height:',img.height)<br>
 img.close()<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/98145032/173811041-904aae41-7e07-4d86-a615-63afab6f5e5d.png)<br>
+![Screenshot 2022-06-15 162538](https://user-images.githubusercontent.com/98145032/173815512-6ecc0eb6-03aa-4f73-8771-e178125146a8.png)
+<br>
 <br>
 from PIL import ImageColor<br>
 img1=ImageColor.getrgb("yellow")<br>
@@ -57,5 +58,6 @@ print(img1)<br>
 img2=ImageColor.getrgb("red")<br>
 print(img2)<br>
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/98145032/173811477-123c679c-062c-473b-b6c5-2c7f8df61686.png)<br>
+![Screenshot 2022-06-15 162807](https://user-images.githubusercontent.com/98145032/173815622-3e93c08c-63fe-47c1-b2cb-2ed4297301d2.png)
+<br>
 
