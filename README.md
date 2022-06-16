@@ -1,81 +1,94 @@
-# Image-Processing<br>
-
-Program 1:<br>
+# Imageprocessing
+http://localhost:8891/notebooks/New%20folder/programp1.ipynb<br>
+1)Develope a program to display greyscale image using read and write operation<br>
 import cv2<br>
-img=cv2.imread('blue.jpg',0)<br>
+img=cv2.imread('flw1.jpg',0)<br>
 cv2.imshow('image',img)<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
-
-<br>
-Program 2:<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97939356/173812703-83a9050e-d7ab-4586-b13b-d21bf6856040.png)<br>
+2) Develope a program to display the image using matplotlib<br> 
 import matplotlib.image as mping<br>
 import matplotlib.pyplot as plt<br>
 img=mping.imread('leaf1.jpg')<br>
 plt.imshow(img)<br>
-OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/97939356/173813368-136d4654-07a2-40c2-8f6f-d616996be0e9.png)
-![Screenshot 2022-06-15 161934](https://user-images.githubusercontent.com/98145032/173815255-f95445d5-72e1-4318-a569-303caa92e8d1.png)<br>
-<br>
-3:
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/173813368-136d4654-07a2-40c2-8f6f-d616996be0e9.png)<br>
+3)Develop a program to perform Linear Transformation<br>
+a) Rotation b) Scaling<br>
 from PIL import Image<br>
-img=Image.open('butterfly1.jpg')<br>
+img=Image.open('bf1.jpg')<br>
 img=img.rotate(180)<br>
 img.show()<br>
 cv2.waitKey(0)<br>
 cv2.destroyAllWindows()<br>
-<br>
-4:
-from PIL import Image<br>
-img=Image.new('RGB',(200,400),(255,255,0))<br>
-img.show()<br><br>
-<br>
-5:
-import cv2<br>
-import matplotlib.pyplot as plt<br>
-import numpy as np<br>
-img=mping.imread('plant1.jpg')<br>
-img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br>
-plt.imshow(img)<br>
-plt.show()<br>
-OUTPUT:<br>
-![Screenshot 2022-06-15 162257](https://user-images.githubusercontent.com/98145032/173815385-69c271f2-9c88-4a29-b227-82b8c19e6f77.png)<br>
-<br>
-6:
-from PIL import Image<br>
-img=Image.open('plant1.jpg')<br>
-print('Filename:',img.filename)<br>
-print('Format:',img.format)<br>
-print('Mode:',img.mode)<br>
-print('Size:',img.size)<br>
-print('Width:',img.width)<br>
-print('Height:',img.height)<br>
-img.close()<br>
-OUTPUT:<br>
-![Screenshot 2022-06-15 162538](https://user-images.githubusercontent.com/98145032/173815512-6ecc0eb6-03aa-4f73-8771-e178125146a8.png)
-<br>
-<br>
-7:
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/173813810-4609a005-d140-43af-a3a6-defd18a78376.png)<br>
+4)Develop a program to convert Colorstring to RGB color value<br>
 from PIL import ImageColor<br>
 img1=ImageColor.getrgb("yellow")<br>
 print(img1)<br>
 img2=ImageColor.getrgb("red")<br>
 print(img2)<br>
-OUTPUT:<br>
-![Screenshot 2022-06-15 162807](https://user-images.githubusercontent.com/98145032/173815622-3e93c08c-63fe-47c1-b2cb-2ed4297301d2.png)
-<br>
-8:
-import cv2
-img=cv2.imread('blue.jpg')
-print('original image length width',img.shape)
-cv2.imshow('original image',img)
-cv2.waitKey(0)
-#to show resized image
-imgresize=cv2.resize(img,(150,160))
-cv2.imshow('Resized image',imgresize)
-print('Resized image length width',imgresize.shape)
-cv2.waitKey(0)
-OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/98145032/174045246-7e960d12-d8ab-4519-94f1-48c823315080.png)
-![Screenshot (8)](https://user-images.githubusercontent.com/98145032/174046032-f93c3334-b729-4f37-b1bd-967a31a86521.png)
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/173814159-22c9431c-03ac-485b-b6f7-214a880d96d2.png)<br>
+5)Write a program to create image using colors<br>
+from PIL import Image<br>
+img=Image.new('RGB',(200,400),(255,255,0))<br>
+img.show()<br>
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/173814503-e00acde1-af74-4c26-89f6-bae047e2f63e.png)<br>
+6)Develop a program to visualize the image using various Colorspaces<br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+import numpy as np<br>
+img=cv2.imread('bf3.jpg')<br>
+img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)<br>
+plt.imshow(img)<br>
+plt.show()<br>
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/173814697-38f7d778-75bd-4973-baff-14cdfbc69aea.png)<br>
+7)Write a program to display the image attributes<br>
+from PIL import Image<br>
+image=Image.open('flw3.jpg')<br>
+print("Filename",image.filename)<br>
+print("Format",image.format)<br>
+print("Mode",image.mode)<br>
+print("Size",image.size)<br>
+print("Width",image.width)<br>
+print("Height",image.height)<br>
+image.close();<br>
+output:<br>
+![image](https://user-images.githubusercontent.com/97939356/173815295-6f31699b-4609-44e8-9210-3bb4319a013e.png)<br>
+8)Convert the original image to gray scale and then to binary<br>
+import cv2<br>
+#read the image file<br>
+img=cv2.imread("flw22.jpg")<br>
+cv2.imshow("RGB",img)<br>
+cv2.waitKey(0)<br>
+#gray scale<br>
+img=cv2.imread("flw22.jpg",0)<br>
+cv2.imshow("gray",img)<br>
+cv2.waitKey(0)<br>
+#binary image<br>
+ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)<br>
+cv2.imshow("BINARY",bw_img)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+![image](https://user-images.githubusercontent.com/97939356/174044748-26dfcc90-888b-4c63-abc3-853fd35d4ce4.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/174045047-19658c38-e426-4b83-9d5a-1d2c2ef158c2.png)<br>
+![image](https://user-images.githubusercontent.com/97939356/174045302-fde2d346-0049-49a8-8da3-7c63501b68c8.png)<br>
+9)Resize the original image<br>
+import cv2<br>
+img=cv2.imread('flw22.jpg')<br>
+print('original image length width',img.shape)<br>
+cv2.imshow('original image',img)<br>
+cv2.waitKey(0)<br>
+#to show the resized image<br>
+imgresize=cv2.resize(img,(150,160))<br>
+cv2.imshow('resized image',imgresize)<br>
+print('Resized image length width',imgresize.shape)<br>
+cv2.waitKey(0)<br>
+![image](https://user-images.githubusercontent.com/97939356/174043706-0a86ce89-0f01-4dcd-a402-43c03448d638.png)<br>
 
