@@ -77,3 +77,5 @@ print('Resized image length width',imgresize.shape)
 cv2.waitKey(0)
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/98145032/174045246-7e960d12-d8ab-4519-94f1-48c823315080.png)
+![Screenshot (8)](https://user-images.githubusercontent.com/98145032/174046032-f93c3334-b729-4f37-b1bd-967a31a86521.png)
+
