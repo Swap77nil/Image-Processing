@@ -1,5 +1,5 @@
 # Image-Processing<br>
-http://localhost:8889/notebooks/swap/program1.ipynb<br>
+
 Program 1:<br>
 import cv2<br>
 img=cv2.imread('blue.jpg',0)<br>
