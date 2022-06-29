@@ -268,3 +268,115 @@ c.waitKey(0)<br>
 
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940475/175268623-22cefe1a-fb53-46e1-9e3d-fce04be704b5.png)<br>
+
+17) Bitwise Operations:<br>
+#Bitwise Operations<br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+image1 = cv2.imread('bb1.jpg',1)<br>
+image2 = cv2.imread('leaf1.jpg')<br>
+ax=plt.subplots(figsize=(15,10))<br>
+bitwiseAnd = cv2.bitwise_and(image1,image2)<br>
+bitwiseOr = cv2.bitwise_or(image1,image2)<br>
+bitwiseXor = cv2.bitwise_xor(image1,image2)<br>
+bitwiseNot_img1 = cv2.bitwise_not(image1)<br>
+bitwiseNot_img2 = cv2.bitwise_not(image2)<br>
+plt.subplot(151)<br>
+plt.imshow(bitwiseAnd)<br>
+plt.subplot(152)<br>
+plt.imshow(bitwiseOr)<br>
+plt.subplot(153)<br>
+plt.imshow(bitwiseXor)<br>
+plt.subplot(154)<br>
+plt.imshow(bitwiseNot_img1)<br>
+plt.subplot(155)<br>
+plt.imshow(bitwiseNot_img2)<br>
+cv2.waitKey(0)<br>
+OUTPUT:<br>
+![ss1](https://user-images.githubusercontent.com/98145032/176410703-91e4581a-8e6f-48c9-ae1f-30b86ea064f9.png)<br>
+
+18) Blurring Image<br>
+#Blurring<br>
+import cv2<br>
+import numpy as np<br>
+image=cv2.imread('bb1.jpg')<br>
+cv2.imshow('original image',image)<br>
+cv2.waitKey(0)<br>
+#gaussian blur<br>
+Gaussian=cv2.GaussianBlur(image,(7,7),0)<br>
+cv2.imshow('Gaussian Blurring',Gaussian)<br>
+cv2.waitKey(0)<br>
+#median blur<br>
+median=cv2.medianBlur(image,5)<br>
+cv2.imshow('Median Blurring',median)<br>
+cv2.waitKey(0)<br>
+#Bilateral Blur<br>
+bilateral =cv2.bilateralFilter(image,9,75,75)<br>
+cv2.imshow('Bilateral Blurring',bilateral)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+OUTPUT:<br>
+![s1](https://user-images.githubusercontent.com/98145032/176411205-6180e983-5b65-4919-a1fd-0511d978cb97.png)<br>
+![s2](https://user-images.githubusercontent.com/98145032/176411287-55dcdd26-a8f2-4743-a994-55bb18d68276.png)<br>
+![s3](https://user-images.githubusercontent.com/98145032/176411331-f62501a3-9e9a-4ac0-869e-b281f50bb8df.png)<br>
+![s4](https://user-images.githubusercontent.com/98145032/176411360-50e236a5-fc2b-4877-b9a6-5028b6c91673.png)<br>
+
+19) Image Enhancement<br>
+#Image Enhancement<br>
+from PIL import Image<br>
+from PIL import ImageEnhance<br>
+image = Image.open('bb1.jpg')<br>
+image.show()<br>
+enh_bri = ImageEnhance.Brightness(image)<br>
+brightness=1.5<br>
+image_brightened = enh_bri.enhance(brightness)<br>
+image_brightened.show()<br>
+enh_col = ImageEnhance.Color(image)<br>
+color=1.5<br>
+image_colored = enh_col.enhance(color)<br>
+image_colored.show()<br>
+enh_con = ImageEnhance.Contrast(image)<br>
+contrast=1.5<br>
+image_contrasted = enh_con.enhance(contrast)<br>
+image_contrasted.show()<br>
+enh_sha = ImageEnhance.Sharpness(image)<br>
+sharpness=3.0<br>
+image_sharped = enh_sha.enhance(sharpness)<br>
+image_sharped.show()<br>
+OUTPUT:<br>
+![ss3](https://user-images.githubusercontent.com/98145032/176411676-ff69e930-53c6-4b0c-8cf0-68ea9c5956b7.png)<br>
+
+20) Morphological Operations<br>
+#Morphological operations<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+from PIL import Image,ImageEnhance<br>
+img=cv2.imread('bb1.jpg',0)<br>
+ax=plt.subplots(figsize=(20,10))<br>
+kernel= np.ones((5,5),np.uint8)<br>
+opening=cv2.morphologyEx(img,cv2.MORPH_OPEN, kernel)<br>
+closing=cv2.morphologyEx(img, cv2.MORPH_CLOSE,kernel)<br>
+erosion=cv2.erode(img,kernel,iterations=1)<br>
+dilation=cv2.dilate(img,kernel,iterations=1)<br>
+gradient=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)<br>
+plt.subplot(151)<br>
+plt.imshow(opening)<br>
+plt.subplot(152)<br>
+plt.imshow(closing)<br>
+plt.subplot(153)<br>
+plt.imshow(erosion)<br>
+plt.subplot(154)<br>
+plt.imshow(dilation)<br>
+plt.subplot(155)<br>
+plt.imshow(gradient)<br>
+cv2.waitKey(0)<br>
+OUTPUT:<br>
+![sss4](https://user-images.githubusercontent.com/98145032/176411996-1a40e1c3-256a-4c21-8ecb-c2c864d169bc.png)<br>
+
+
+
+
+
+
+
