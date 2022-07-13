@@ -414,7 +414,7 @@ plt.show()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/98145032/178703582-30604e53-2037-4bf7-abc6-9b3e2c0905da.png)<br>
 
-23) Saving Grayscale Image<br>
+23) Read and Write i.e Saving Grayscale Image<br>
 import cv2<br>
 OriginalImg=cv2.imread('bb1.jpg')<br>
 GrayImg=cv2.imread('bb1.jpg',0)<br>
