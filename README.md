@@ -374,6 +374,45 @@ cv2.waitKey(0)<br>
 OUTPUT:<br>
 ![sss4](https://user-images.githubusercontent.com/98145032/176411996-1a40e1c3-256a-4c21-8ecb-c2c864d169bc.png)<br>
 
+21) Grayscale Slicing with Background<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('cat1.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+             z[i][j]=image[i][j]<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/178703361-4fb593b3-9431-45e0-95f3-66ddf428ec10.png)<br>
+
+22) Grayscale Slicing without Background<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('cat1.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+             z[i][j]=0<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/178703582-30604e53-2037-4bf7-abc6-9b3e2c0905da.png)<br>
 
 
 
