@@ -414,6 +414,20 @@ plt.show()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/98145032/178703582-30604e53-2037-4bf7-abc6-9b3e2c0905da.png)<br>
 
+23) Saving Grayscale Image<br>
+import cv2<br>
+OriginalImg=cv2.imread('bb1.jpg')<br>
+GrayImg=cv2.imread('bb1.jpg',0)<br>
+isSaved=cv2.imwrite('E:/img.jpg',GrayImg)<br>
+cv2.imshow('Disaplay Original Image',OriginalImg)<br>
+cv2.imshow('Disaplay Grayscale Image',GrayImg)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+if isSaved:<br>
+    print('The image is successfully saved.')<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/178704421-96d38372-96e9-4b7c-a966-285d80f148ff.png)<br>
+![image](https://user-images.githubusercontent.com/98145032/178704216-c3b3e6e8-05b0-44a0-9155-2c9c4babfc83.png)<br>
 
 
 
