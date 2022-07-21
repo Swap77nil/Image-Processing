@@ -487,5 +487,60 @@ plt.axis('off');<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/98145032/180174455-379f763f-72e4-4f7e-b520-997de87daa07.png)<br>
 
-
-
+25)Program to perform basic image manipulation:<br>
+a)Sharpness<br>
+b)Flipping<br>
+c)Cropping<br>
+<br>
+a)<br>
+#Image Sharpen<br>
+from PIL import Image<br>
+from PIL import ImageFilter<br>
+import matplotlib.pyplot as plt<br>
+#Load the image<br>
+my_image = Image.open('lm10.jpg')<br>
+#Use sharpen function<br>
+sharp=my_image.filter(ImageFilter.SHARPEN)<br>
+#Save image<br>
+sharp.save('E:/image_sharpen.jpg')<br>
+sharp.show()<br>
+plt.imshow(sharp)<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/180189354-7767a302-7ecf-40dc-8147-88fdbee38b2e.png)<br>
+<br>
+b)<br>
+#Image flip<br>
+import matplotlib.pyplot as plt<br>
+#Load the image<br>
+img=Image.open('lm10.jpg')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+#use the flip function<br>
+flip=img.transpose(Image.FLIP_LEFT_RIGHT)<br>
+<br>
+#save the image<br>
+flip.save('E:/image_flip.jpg')<br>
+plt.imshow(flip)<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/180189556-f9509e4a-3c76-4a99-8fc9-323d836ae070.png)<br>
+<br>
+c)<br>
+from PIL import Image<br>
+import matplotlib.pyplot as plt<br>
+#open a image in RGB mode<br>
+im=Image.open('lm10.jpg')<br>
+<br>
+#size of image in pixel<br>
+width,height=im.size<br>
+<br>
+#Cropped image of above dimension<br>
+im1=im.crop((380,100,1500,1000))<br>
+<br>
+#shows the image in image viewer<br>
+im1.show()<br>
+plt.imshow(im1)<br>
+plt.show()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/180189646-397c431a-1025-42ee-b3ae-2e62c0d63455.png)<br>
