@@ -429,7 +429,63 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/98145032/178704421-96d38372-96e9-4b7c-a966-285d80f148ff.png)<br>
 ![image](https://user-images.githubusercontent.com/98145032/178704216-c3b3e6e8-05b0-44a0-9155-2c9c4babfc83.png)<br>
 
-
+24)Program to perform image analysis using intensity transformation<br>
+ a)Image negative<br>
+ b)Log transformation<br>
+ c)Gamma correction<br>
+<br>
+%matplotlib inline<br>
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+import warnings<br>
+import matplotlib.cbook<br>
+warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)<br>
+pic=imageio.imread('bb1.jpg')<br>
+plt.figure(figsize=(6,6))<br>
+plt.imshow(pic);<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/180174091-226d8690-ebbf-4afb-92d7-142675f34d52.png)<br>
+a)<br>
+negative=255-pic # neg=(L-1)-img<br>
+plt.figure(figsize=(6,6))<br>
+plt.imshow(negative);<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/180174370-b88b4e67-cc5d-4f89-bdba-b6a1ea0d6eba.png)<br>
+b)<br>
+#%matplotlib inline<br>
+import imageio<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+<br>
+pic=imageio.imread('bb1.jpg')<br>
+gray=lambda rgb : np.dot(rgb[...,:3],[0.299,0.587,0.114])<br>
+gray=gray(pic)<br>
+<br>
+max_=np.max(gray)<br>
+<br>
+def log_transform():<br>
+    return(255/np.log(1+max_))*np.log(1+gray)<br>
+plt.figure(figsize=(5,5))<br>
+plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray'))<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/180174308-7bcb7e12-f6ba-4333-a644-85b174d1a4c7.png)<br>
+c)<br>
+import imageio<br>
+import matplotlib.pyplot as plt<br>
+<br>
+#gamma encoding<br>
+pic=imageio.imread('bb1.jpg')<br>
+gamma=2.2 # Gamma < 1 ~ Dark ; Gamma > 1 ~ Bright<br>
+<br>
+gamma_correction=((pic/255)**(1/gamma))<br>
+plt.figure(figsize=(5,5))<br>
+plt.imshow(gamma_correction)<br>
+plt.axis('off');<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/98145032/180174455-379f763f-72e4-4f7e-b520-997de87daa07.png)<br>
 
 
 
